@@ -1,6 +1,5 @@
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
 	List,
 	ChevronLeft,
@@ -12,12 +11,15 @@ import {
 	LayoutDashboard,
 	Settings,
 	Flame,
+	AlarmClock,
+	StickyNote,
 } from "lucide-react";
 import logo from "@/assets/logo.png";
+import UserAvatar from "./UserAvatar";
 
 export default function MainNav() {
 	return (
-		<nav className="flex w-full justify-between items-center h-16 px-4">
+		<nav className="flex w-full justify-between items-center h-12 px-4">
 			<div className="flex items-center h-8 space-x-1">
 				<div className="flex items-center mr-2">
 					<img src={logo} alt="logo" className="w-4" />
@@ -48,11 +50,11 @@ export default function MainNav() {
 						<CloudUpload className="caret-green-500" /> Submit
 					</Button>
 				</div>
-				<Button variant="ghost" size="icon">
-					<ChevronRight />
+				<Button variant="secondary" size="icon">
+					<AlarmClock />
 				</Button>
-				<Button variant="ghost" size="icon">
-					<Shuffle />
+				<Button variant="secondary" size="icon">
+					<StickyNote />
 				</Button>
 			</div>
 			<div className="flex items-center h-8 space-x-1">
@@ -65,13 +67,7 @@ export default function MainNav() {
 				<Button variant="ghost">
 					<Flame /> 0
 				</Button>
-				<Avatar className="w-6 h-auto">
-					<AvatarImage
-						src="https://assets.leetcode.com/users/default_avatar.jpg"
-						alt="@shadcn"
-					/>
-					<AvatarFallback>CH</AvatarFallback>
-				</Avatar>
+				<UserAvatar className="!mx-2 rounded-full p-0" />
 				<Button>Premium</Button>
 			</div>
 		</nav>
