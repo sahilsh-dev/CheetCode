@@ -19,9 +19,9 @@ import UserAvatar from "./UserAvatar";
 
 export default function MainNav() {
 	return (
-		<nav className="flex w-full justify-between items-center h-12 px-4">
+		<nav className="flex w-full justify-between items-center h-[var(--navbar-height)]">
 			<div className="flex items-center h-8 space-x-1">
-				<div className="flex items-center mr-2">
+				<div className="flex items-center mx-2">
 					<img src={logo} alt="logo" className="w-4" />
 				</div>
 				<Separator orientation="vertical" className="h-5" />

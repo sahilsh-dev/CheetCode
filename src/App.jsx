@@ -1,12 +1,13 @@
 import { ThemeProvider } from "./components/ThemeProvider";
 import MainNav from "./components/MainNav";
+import Workspace from "./components/Workspace";
 
 function App() {
 	return (
 		<ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-			<main>
+			<main className="px-2 pb-2">
 				<MainNav />
-				<h1 className="text-4xl">Hi there</h1>
+				<Workspace />
 			</main>
 		</ThemeProvider>
 	);
