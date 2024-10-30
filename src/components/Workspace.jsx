@@ -24,7 +24,7 @@ export default function Workspace() {
 			</ResizablePanel>
 			<ResizableHandle withHandle />
 			<ResizablePanel defaultSize={50}>
-				<div className="flex h-[400px] flex-col items-center justify-center p-6">
+				<div className="flex min-h-[400px] flex-col items-center justify-center p-6">
 					<span className="font-semibold">One</span>
 				</div>
 			</ResizablePanel>
