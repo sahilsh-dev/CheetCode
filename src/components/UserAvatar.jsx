@@ -7,7 +7,7 @@ export default function UserAvatar({ className }) {
 			<Avatar className="w-6 h-auto">
 				<AvatarImage
 					src="https://assets.leetcode.com/users/default_avatar.jpg"
-					alt="@shadcn"
+					alt="LC"
 				/>
 				<AvatarFallback>LC</AvatarFallback>
 			</Avatar>

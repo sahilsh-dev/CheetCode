@@ -19,7 +19,7 @@ import UserAvatar from "./UserAvatar";
 
 export default function MainNav() {
 	return (
-		<nav className="flex w-full justify-between items-center h-[var(--navbar-height)]">
+		<nav className="flex w-full justify-between items-center h-12">
 			<div className="flex items-center h-8 space-x-1">
 				<div className="flex items-center mx-2">
 					<img src={logo} alt="logo" className="w-4" />
@@ -46,8 +46,8 @@ export default function MainNav() {
 					<Button variant="secondary">
 						<Play /> Run
 					</Button>
-					<Button variant="secondary">
-						<CloudUpload className="caret-green-500" /> Submit
+					<Button variant="secondary" className="text-green-500">
+						<CloudUpload /> Submit
 					</Button>
 				</div>
 				<Button variant="secondary" size="icon">
