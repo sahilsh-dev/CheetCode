@@ -33,6 +33,29 @@ export default function ProblemText() {
 					with ID followerId started unfollowing the user with ID followeeId.
 				</li>
 			</ul>
+			<div className="!my-8">
+				<p>
+					<strong>Constraints:</strong>
+				</p>
+				<ul className="list-disc list-outside list space-y-3 ms-4 mt-4">
+					<li>
+						<code>1 &lt;= userId, followerId, followeeId &lt;= 500</code>
+					</li>
+					<li>
+						<code>
+							0 &lt;= tweetId &lt;= 10<sup>4</sup>
+						</code>
+					</li>
+					<li>All the tweets have unique IDs.</li>
+					<li>
+						At most{" "}
+						<code>
+							3 * 10<sup>4</sup>
+						</code>{" "}
+						calls will be made to postTweet, getNewsFeed, follow, and unfollow.
+					</li>
+				</ul>
+			</div>
 		</div>
 	);
 }
