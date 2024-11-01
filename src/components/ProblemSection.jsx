@@ -1,6 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CircleCheckBig, Tag, Lock } from "lucide-react";
 import { Button } from "./ui/button";
+import ProblemText from "./ProblemText";
 
 export default function ProblemSection() {
 	return (
@@ -30,7 +31,7 @@ export default function ProblemSection() {
 							<CircleCheckBig className="w-[14px] text-[var(--success-green)]" />
 						</div>
 					</div>
-					<div className="flex items-center space-x-2 my-3">
+					<div className="flex items-center space-x-2 my-4">
 						<Button size="sm">Medium</Button>
 						<Button size="sm">
 							<Tag className="!w-3" /> Topics
@@ -39,6 +40,7 @@ export default function ProblemSection() {
 							<Lock className="!w-3" /> Companies
 						</Button>
 					</div>
+					<ProblemText />
 				</div>
 			</TabsContent>
 			<TabsContent value="editorial"></TabsContent>
