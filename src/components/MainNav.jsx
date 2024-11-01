@@ -46,7 +46,7 @@ export default function MainNav() {
 					<Button variant="secondary">
 						<Play /> Run
 					</Button>
-					<Button variant="secondary" className="text-green-500">
+					<Button variant="secondary" className="text-[var(--success-green)]">
 						<CloudUpload /> Submit
 					</Button>
 				</div>

@@ -4,6 +4,9 @@
 
 @layer base {
 	:root {
+		--success-green: #28c244;
+		--difficulty-medium: #fac31d;
+
 		--background: 0 0% 100%;
 		--foreground: 0 0% 3.9%;
 		--card: 0 0% 100%;

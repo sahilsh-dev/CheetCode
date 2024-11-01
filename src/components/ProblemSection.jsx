@@ -1,5 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { CircleCheckBig } from "lucide-react";
+import { CircleCheckBig, Tag, Lock } from "lucide-react";
+import { Button } from "./ui/button";
 
 export default function ProblemSection() {
 	return (
@@ -19,15 +20,24 @@ export default function ProblemSection() {
 				</TabsTrigger>
 			</TabsList>
 			<TabsContent value="description">
-				<div className="p-4">
+				<div className="flex flex-col p-4">
 					<div className="flex justify-between items-center">
 						<div>
 							<h1 className="text-2xl font-bold">355. Design Twitter</h1>
 						</div>
 						<div className="flex items-center gap-1">
 							<p className="text-sm text-[#a0a8a4]">Solved</p>
-							<CircleCheckBig size={14} className="text-green-500" />
+							<CircleCheckBig className="w-[14px] text-[var(--success-green)]" />
 						</div>
+					</div>
+					<div className="flex items-center space-x-2 my-3">
+						<Button size="sm">Medium</Button>
+						<Button size="sm">
+							<Tag className="!w-3" /> Topics
+						</Button>
+						<Button size="sm">
+							<Lock className="!w-3" /> Companies
+						</Button>
 					</div>
 				</div>
 			</TabsContent>
