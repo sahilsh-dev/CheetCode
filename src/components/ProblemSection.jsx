@@ -1,7 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CircleCheckBig, Tag, Lock } from "lucide-react";
 import { Button } from "./ui/button";
-import ProblemText from "./ProblemText";
+import DescriptionText from "./DescriptionText";
 import { ScrollArea } from "./ui/scroll-area";
 
 export default function ProblemSection() {
@@ -21,10 +21,13 @@ export default function ProblemSection() {
 					Submissions
 				</TabsTrigger>
 			</TabsList>
-			<TabsContent value="description" className="h-full flex flex-col">
-				<ScrollArea className="flex-grow">
+			<TabsContent
+				value="description"
+				className="h-[calc(100%-36px)] flex flex-col"
+			>
+				<ScrollArea>
 					<div className="flex flex-col p-4 h-full">
-						<div className="flex justify-between items-center">
+						<div className="flex justify-between items-center pt-1">
 							<div>
 								<h1 className="text-2xl font-bold">355. Design Twitter</h1>
 							</div>
@@ -42,10 +45,12 @@ export default function ProblemSection() {
 								<Lock className="!w-3" /> Companies
 							</Button>
 						</div>
-						<ProblemText />
+						<DescriptionText />
 					</div>
 				</ScrollArea>
-				<h1 className="text-3xl">Comeon</h1>
+				<div className="h-9 border-t">
+					<h1 className="text-lg">Like</h1>
+				</div>
 			</TabsContent>
 			<TabsContent value="editorial"></TabsContent>
 		</Tabs>

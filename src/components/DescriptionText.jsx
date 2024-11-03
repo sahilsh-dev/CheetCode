@@ -1,4 +1,4 @@
-export default function ProblemText() {
+export default function DescriptionText() {
 	return (
 		<div className="flex flex-col space-y-3 text-sm my-3">
 			<p>
