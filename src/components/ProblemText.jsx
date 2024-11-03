@@ -4,7 +4,7 @@ export default function ProblemText() {
 			<p>
 				Design a simplified version of Twitter where users can post tweets,
 				follow/unfollow another user, and is able to see the <code>10</code>{" "}
-				most recent tweets in the user's news feed.
+				most recent tweets in the user&apos;s news feed.
 			</p>
 			<p>
 				Implement the <code>Twitter</code> class:
@@ -20,9 +20,10 @@ export default function ProblemText() {
 				</li>
 				<li>
 					<code>List&lt;Integer&gt; getNewsFeed(int userId)</code> Retrieves the
-					10 most recent tweet IDs in the user's news feed. Each item in the
-					news feed must be posted by users who the user followed or by the user
-					themself. Tweets must be ordered from most recent to least recent.
+					10 most recent tweet IDs in the user&apos;s news feed. Each item in
+					the news feed must be posted by users who the user followed or by the
+					user themself. Tweets must be ordered from most recent to least
+					recent.
 				</li>
 				<li>
 					<code>void follow(int followerId, int followeeId)</code> The user with
