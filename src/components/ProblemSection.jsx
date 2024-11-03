@@ -1,8 +1,9 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CircleCheckBig, Tag, Lock } from "lucide-react";
 import { Button } from "./ui/button";
-import DescriptionText from "./DescriptionText";
 import { ScrollArea } from "./ui/scroll-area";
+import DescriptionText from "./DescriptionText";
+import DescriptionFooter from "./DescriptionFooter";
 
 export default function ProblemSection() {
 	return (
@@ -46,6 +47,7 @@ export default function ProblemSection() {
 							</Button>
 						</div>
 						<DescriptionText />
+						<DescriptionFooter />
 					</div>
 				</ScrollArea>
 				<div className="h-9 border-t">
