@@ -1,3 +1,6 @@
+import { Separator } from "@/components/ui/separator";
+import { Button } from "@/components/ui/button";
+
 export default function DescriptionText() {
 	return (
 		<div className="flex flex-col space-y-3 text-sm my-3">
@@ -57,6 +60,25 @@ export default function DescriptionText() {
 					</li>
 				</ul>
 			</div>
+			<Separator />
+			<div className="space-y-3 py-2">
+				<p>Seen this question in a real interview before?</p>
+				<div className="flex gap-3">
+					<Button size="sm">Yes</Button>
+					<Button size="sm">No</Button>
+				</div>
+				<div className="flex h-4 gap-2 text-xs">
+					<p>Accepted</p>
+					<p>210K</p>
+					<Separator orientation="vertical" />
+					<p>Submissions</p>
+					<p>514K</p>
+					<Separator orientation="vertical" />
+					<p>Acceptance Rate</p>
+					<p>40.9%</p>
+				</div>
+			</div>
+			<Separator />
 		</div>
 	);
 }
