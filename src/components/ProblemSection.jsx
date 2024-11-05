@@ -1,9 +1,9 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScrollArea } from "./ui/scroll-area";
-import DescriptionHeader from "./DescriptionHeader";
-import DescriptionBody from "./DescriptionBody";
-import DescriptionFooter from "./DescriptionFooter";
-import ProblemFooter from "./ProblemFooter";
+import DescriptionHeader from "./Problem/DescriptionHeader";
+import DescriptionBody from "./Problem/DescriptionBody";
+import DescriptionFooter from "./Problem/DescriptionFooter";
+import ProblemFooter from "./Problem/ProblemFooter";
 
 export default function ProblemSection() {
 	return (
