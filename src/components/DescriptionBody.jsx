@@ -1,4 +1,4 @@
-export default function DescriptionText() {
+export default function DescriptionBody() {
 	return (
 		<div className="flex flex-col space-y-3 text-sm my-3">
 			<p>

@@ -1,7 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScrollArea } from "./ui/scroll-area";
 import DescriptionHeader from "./DescriptionHeader";
-import DescriptionText from "./DescriptionText";
+import DescriptionBody from "./DescriptionBody";
 import DescriptionFooter from "./DescriptionFooter";
 import ProblemFooter from "./ProblemFooter";
 
@@ -29,7 +29,7 @@ export default function ProblemSection() {
 				<ScrollArea>
 					<div className="flex flex-col p-4 h-full">
 						<DescriptionHeader />
-						<DescriptionText />
+						<DescriptionBody />
 						<DescriptionFooter />
 					</div>
 				</ScrollArea>
