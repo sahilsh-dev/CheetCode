@@ -4,7 +4,7 @@ import TestsBody from "./TestsBody";
 
 export default function TestcaseSection() {
 	return (
-		<Tabs defaultValue="tests" className="h-full">
+		<Tabs defaultValue="tests" className="h-[calc(100%-36px)] ">
 			<TabsList className="flex justify-start w-full h-9">
 				<TabsTrigger value="tests" className="text-sm px-2 py-1">
 					Testcase
@@ -13,13 +13,17 @@ export default function TestcaseSection() {
 					Test Result
 				</TabsTrigger>
 			</TabsList>
-			<TabsContent value="tests" className="h-[calc(100%-36px)] flex flex-col">
-				<ScrollArea>
-					<TestsBody />
-				</ScrollArea>
+			<TabsContent value="tests">
+				<div className="flex flex-col h-full">
+					<ScrollArea>
+						<TestsBody />
+					</ScrollArea>
+				</div>
 			</TabsContent>
-			<TabsContent value="test-result">
-				<div>You must run your code first</div>
+			<TabsContent value="test-result" className="h-full">
+				<div className="flex items-center justify-center h-full">
+					<p>You must run your code first</p>
+				</div>
 			</TabsContent>
 		</Tabs>
 	);

@@ -7,7 +7,7 @@ import ProblemFooter from "./ProblemFooter";
 
 export default function ProblemSection() {
 	return (
-		<Tabs defaultValue="description" className="h-full">
+		<Tabs defaultValue="description" className="h-[calc(100%-36px)] ">
 			<TabsList className="flex justify-start w-full h-9">
 				<TabsTrigger value="description" className="text-sm px-2 py-1">
 					Description
@@ -22,20 +22,19 @@ export default function ProblemSection() {
 					Submissions
 				</TabsTrigger>
 			</TabsList>
-			<TabsContent
-				value="description"
-				className="h-[calc(100%-36px)] flex flex-col"
-			>
-				<ScrollArea>
-					<div className="flex flex-col p-4 h-full">
-						<DescriptionHeader />
-						<DescriptionBody />
-						<DescriptionFooter />
-					</div>
-				</ScrollArea>
-				<ProblemFooter />
+			<TabsContent value="description" className="h-full">
+				<div className="flex flex-col h-full">
+					<ScrollArea>
+						<div className="flex flex-col p-4 h-full">
+							<DescriptionHeader />
+							<DescriptionBody />
+							<DescriptionFooter />
+						</div>
+					</ScrollArea>
+					<ProblemFooter />
+				</div>
 			</TabsContent>
-			<TabsContent value="editorial"></TabsContent>
+			<TabsContent value="editorial">Editorial</TabsContent>
 		</Tabs>
 	);
 }
