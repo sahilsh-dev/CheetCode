@@ -6,10 +6,10 @@ export default function TestcaseSection() {
 	return (
 		<Tabs defaultValue="tests" className="h-[calc(100%-36px)] ">
 			<TabsList className="flex justify-start w-full h-9">
-				<TabsTrigger value="tests" className="text-sm px-2 py-1">
+				<TabsTrigger value="tests" className="px-2 py-1">
 					Testcase
 				</TabsTrigger>
-				<TabsTrigger value="test-result" className="text-sm px-2 py-1">
+				<TabsTrigger value="test-result" className="px-2 py-1">
 					Test Result
 				</TabsTrigger>
 			</TabsList>

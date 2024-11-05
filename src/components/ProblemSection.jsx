@@ -7,18 +7,18 @@ import ProblemFooter from "./Problem/ProblemFooter";
 
 export default function ProblemSection() {
 	return (
-		<Tabs defaultValue="description" className="h-[calc(100%-36px)] ">
+		<Tabs defaultValue="description" className="h-[calc(100%-36px)]">
 			<TabsList className="flex justify-start w-full h-9">
-				<TabsTrigger value="description" className="text-sm px-2 py-1">
+				<TabsTrigger value="description" className="px-2 py-1">
 					Description
 				</TabsTrigger>
-				<TabsTrigger value="editorial" className="text-sm px-2 py-1">
+				<TabsTrigger value="editorial" className="px-2 py-1">
 					Editorial
 				</TabsTrigger>
-				<TabsTrigger value="solutions" className="text-sm px-2 py-1">
+				<TabsTrigger value="solutions" className="px-2 py-1">
 					Solutions
 				</TabsTrigger>
-				<TabsTrigger value="submissions" className="text-sm px-2 py-1">
+				<TabsTrigger value="submissions" className="px-2 py-1">
 					Submissions
 				</TabsTrigger>
 			</TabsList>
