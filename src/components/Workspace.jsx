@@ -4,21 +4,22 @@ import {
 	ResizablePanelGroup,
 } from "@/components/ui/resizable";
 import ProblemSection from "./ProblemSection";
+import TestcaseSection from "./TestcaseSection";
 
 export default function Workspace() {
 	return (
 		<ResizablePanelGroup direction="horizontal" className="border rounded-lg">
 			<ResizablePanel defaultSize={50}>
 				<ResizablePanelGroup direction="vertical">
-					<ResizablePanel defaultSize={75}>
+					<ResizablePanel defaultSize={40}>
 						<div className="h-full">
 							<ProblemSection />
 						</div>
 					</ResizablePanel>
 					<ResizableHandle withHandle />
-					<ResizablePanel defaultSize={25}>
-						<div className="flex h-full items-center justify-center p-6">
-							<span className="font-semibold">Testcase Section</span>
+					<ResizablePanel defaultSize={60}>
+						<div className="h-full">
+							<TestcaseSection />
 						</div>
 					</ResizablePanel>
 				</ResizablePanelGroup>
