@@ -13,7 +13,7 @@ export default function TestcaseSection() {
 					Test Result
 				</TabsTrigger>
 			</TabsList>
-			<TabsContent value="tests">
+			<TabsContent value="tests" className="h-full">
 				<div className="flex flex-col h-full">
 					<ScrollArea>
 						<TestsBody />

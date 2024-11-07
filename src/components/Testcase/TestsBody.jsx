@@ -5,7 +5,6 @@ import {
 	TabsTrigger,
 } from "@/components/ui/testcase-tabs";
 import { Plus } from "lucide-react";
-import { Button } from "../ui/button";
 
 const testcaseData = [
 	[
@@ -18,7 +17,7 @@ const testcaseData = [
 
 export default function TestsBody() {
 	return (
-		<div className="px-5 py-4">
+		<div className="px-5 py-4 h-full">
 			<Tabs defaultValue="case-1">
 				<TabsList className="flex justify-start w-full h-9 gap-4 mb-4">
 					<TabsTrigger value="case-1">Case 1</TabsTrigger>
