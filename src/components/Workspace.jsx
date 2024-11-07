@@ -5,6 +5,7 @@ import {
 } from "@/components/ui/resizable";
 import ProblemSection from "./ProblemSection";
 import TestcaseSection from "./TestcaseSection";
+import CodeSection from "./CodeSection";
 
 export default function Workspace() {
 	return (
@@ -26,8 +27,8 @@ export default function Workspace() {
 			</ResizablePanel>
 			<ResizableHandle withHandle />
 			<ResizablePanel defaultSize={50}>
-				<div className="flex h-full flex-col items-center justify-center p-6">
-					<span className="font-semibold">Code Section</span>
+				<div className="h-full">
+					<CodeSection />
 				</div>
 			</ResizablePanel>
 		</ResizablePanelGroup>
