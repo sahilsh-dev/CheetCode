@@ -1,5 +1,5 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import CodeTopBar from "./Code/CodeTopBar";
 
 export default function CodeSection() {
 	return (
@@ -14,7 +14,7 @@ export default function CodeSection() {
 			</TabsList>
 			<TabsContent value="code" className="h-full">
 				<div className="flex flex-col h-full">
-					<ScrollArea></ScrollArea>
+					<CodeTopBar />
 				</div>
 			</TabsContent>
 			<TabsContent value="note" className="h-full">
