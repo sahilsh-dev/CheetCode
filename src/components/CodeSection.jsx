@@ -1,4 +1,5 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Separator } from "@/components/ui/separator";
 import CodeTopBar from "./Code/CodeTopBar";
 
 export default function CodeSection() {
@@ -15,6 +16,7 @@ export default function CodeSection() {
 			<TabsContent value="code" className="h-full">
 				<div className="flex flex-col h-full">
 					<CodeTopBar />
+					<Separator />
 				</div>
 			</TabsContent>
 			<TabsContent value="note" className="h-full">

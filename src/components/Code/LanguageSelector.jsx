@@ -9,9 +9,9 @@ import {
 export default function LanguageSelector() {
 	return (
 		<div>
-			<Select>
+			<Select defaultValue="python">
 				<SelectTrigger className="w-fit h-6">
-					<SelectValue placeholder="Python3" />
+					<SelectValue placeholder="Python" />
 				</SelectTrigger>
 				<SelectContent>
 					<SelectItem value="python" className="h-6">
