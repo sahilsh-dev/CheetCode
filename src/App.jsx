@@ -1,4 +1,5 @@
 import { ThemeProvider } from "./components/ThemeProvider";
+import { Toaster } from "@/components/ui/sonner";
 import MainNav from "./components/MainNav";
 import Workspace from "./components/Workspace";
 
@@ -9,6 +10,7 @@ function App() {
 				<MainNav />
 				<Workspace />
 			</main>
+			<Toaster />
 		</ThemeProvider>
 	);
 }

@@ -20,10 +20,30 @@ import {
 	TooltipProvider,
 	TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { toast } from "sonner";
 import logo from "@/assets/logo.png";
 import UserAvatar from "./UserAvatar";
 
 export default function MainNav() {
+	const getCurrentDateTime = () => {
+		const now = new Date();
+		return now.toLocaleString("en-US", {
+			weekday: "long",
+			year: "numeric",
+			month: "long",
+			day: "numeric",
+			hour: "numeric",
+			minute: "numeric",
+			hour12: true,
+		});
+	};
+
+	const handleSubmit = () => {
+		return new Promise((resolve, reject) =>
+			setTimeout(() => reject({ name: "Submit" }), 2000)
+		);
+	};
+
 	return (
 		<TooltipProvider delayDuration={100}>
 			<nav className="flex w-full justify-between items-center h-12">
@@ -87,7 +107,17 @@ export default function MainNav() {
 						</Tooltip>
 						<Tooltip>
 							<TooltipTrigger>
-								<Button variant="secondary">
+								<Button
+									variant="secondary"
+									onClick={() => {
+										toast.success("Code ran successfully", {
+											description: getCurrentDateTime(),
+											action: {
+												label: "Close",
+											},
+										});
+									}}
+								>
 									<Play /> Run
 								</Button>
 							</TooltipTrigger>
@@ -100,12 +130,21 @@ export default function MainNav() {
 								<Button
 									variant="secondary"
 									className="text-[var(--success-green)]"
+									onClick={() => {
+										toast.promise(handleSubmit, {
+											loading: "Pending...",
+											success: () => {
+												return "Code submitted successfully";
+											},
+											error: "Did not pass all the test cases",
+										});
+									}}
 								>
 									<CloudUpload /> Submit
 								</Button>
 							</TooltipTrigger>
 							<TooltipContent>
-								<p>Why you wanna submit?</p>
+								<p>Submit</p>
 							</TooltipContent>
 						</Tooltip>
 					</div>
@@ -162,7 +201,9 @@ export default function MainNav() {
 						</TooltipContent>
 					</Tooltip>
 					<UserAvatar className="!mx-2 rounded-full p-0" />
-					<Button>Premium</Button>
+					<Button>
+						<a href="https://github.com/sahilsh-dev/CheetCode/">Premium</a>
+					</Button>
 				</div>
 			</nav>
 		</TooltipProvider>
