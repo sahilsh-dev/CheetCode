@@ -14,62 +14,157 @@ import {
 	AlarmClock,
 	StickyNote,
 } from "lucide-react";
+import {
+	Tooltip,
+	TooltipContent,
+	TooltipProvider,
+	TooltipTrigger,
+} from "@/components/ui/tooltip";
 import logo from "@/assets/logo.png";
 import UserAvatar from "./UserAvatar";
 
 export default function MainNav() {
 	return (
-		<nav className="flex w-full justify-between items-center h-12">
-			<div className="flex items-center h-8 space-x-1">
-				<div className="flex items-center mx-2">
-					<img src={logo} alt="logo" className="w-4" />
+		<TooltipProvider delayDuration={100}>
+			<nav className="flex w-full justify-between items-center h-12">
+				<div className="flex items-center h-8 space-x-1">
+					<div className="flex items-center mx-2">
+						<img src={logo} alt="logo" className="w-4" />
+					</div>
+					<Separator orientation="vertical" className="h-5" />
+					<Tooltip>
+						<TooltipTrigger>
+							<Button variant="ghost">
+								<List /> Problem List
+							</Button>
+						</TooltipTrigger>
+						<TooltipContent>
+							<p>Expand Panel</p>
+						</TooltipContent>
+					</Tooltip>
+					<Tooltip>
+						<TooltipTrigger>
+							<Button variant="ghost" size="icon">
+								<ChevronLeft />
+							</Button>
+						</TooltipTrigger>
+						<TooltipContent>
+							<p>Prev Question</p>
+						</TooltipContent>
+					</Tooltip>
+					<Tooltip>
+						<TooltipTrigger>
+							<Button variant="ghost" size="icon">
+								<ChevronRight />
+							</Button>
+						</TooltipTrigger>
+						<TooltipContent>
+							<p>Next Question</p>
+						</TooltipContent>
+					</Tooltip>
+					<Tooltip>
+						<TooltipTrigger>
+							<Button variant="ghost" size="icon">
+								<Shuffle />
+							</Button>
+						</TooltipTrigger>
+						<TooltipContent>
+							<p>Pick one</p>
+						</TooltipContent>
+					</Tooltip>
 				</div>
-				<Separator orientation="vertical" className="h-5" />
-				<Button variant="ghost">
-					<List /> Problem List
-				</Button>
-				<Button variant="ghost" size="icon">
-					<ChevronLeft />
-				</Button>
-				<Button variant="ghost" size="icon">
-					<ChevronRight />
-				</Button>
-				<Button variant="ghost" size="icon">
-					<Shuffle />
-				</Button>
-			</div>
-			<div className="flex items-center h-8 space-x-2">
-				<div className="flex items-center space-x-1">
-					<Button size="icon" variant="secondary">
-						<BugPlay />
-					</Button>
-					<Button variant="secondary">
-						<Play /> Run
-					</Button>
-					<Button variant="secondary" className="text-[var(--success-green)]">
-						<CloudUpload /> Submit
-					</Button>
+				<div className="flex items-center h-8 space-x-2">
+					<div className="flex items-center space-x-1">
+						<Tooltip>
+							<TooltipTrigger>
+								<Button size="icon" variant="secondary">
+									<BugPlay />
+								</Button>
+							</TooltipTrigger>
+							<TooltipContent>
+								<p>Upgrade to premium to use debugger</p>
+							</TooltipContent>
+						</Tooltip>
+						<Tooltip>
+							<TooltipTrigger>
+								<Button variant="secondary">
+									<Play /> Run
+								</Button>
+							</TooltipTrigger>
+							<TooltipContent>
+								<p>Click Me!</p>
+							</TooltipContent>
+						</Tooltip>
+						<Tooltip>
+							<TooltipTrigger>
+								<Button
+									variant="secondary"
+									className="text-[var(--success-green)]"
+								>
+									<CloudUpload /> Submit
+								</Button>
+							</TooltipTrigger>
+							<TooltipContent>
+								<p>Why you wanna submit?</p>
+							</TooltipContent>
+						</Tooltip>
+					</div>
+					<Tooltip>
+						<TooltipTrigger>
+							<Button variant="secondary" size="icon">
+								<AlarmClock />
+							</Button>
+						</TooltipTrigger>
+						<TooltipContent>
+							<p>Nope, doesnt work</p>
+						</TooltipContent>
+					</Tooltip>
+					<Tooltip>
+						<TooltipTrigger>
+							<Button variant="secondary" size="icon">
+								<StickyNote />
+							</Button>
+						</TooltipTrigger>
+						<TooltipContent>
+							<p>Take a note</p>
+						</TooltipContent>
+					</Tooltip>
 				</div>
-				<Button variant="secondary" size="icon">
-					<AlarmClock />
-				</Button>
-				<Button variant="secondary" size="icon">
-					<StickyNote />
-				</Button>
-			</div>
-			<div className="flex items-center h-8 space-x-1">
-				<Button variant="ghost" size="icon">
-					<LayoutDashboard />
-				</Button>
-				<Button variant="ghost" size="icon">
-					<Settings />
-				</Button>
-				<Button variant="ghost">
-					<Flame /> 0
-				</Button>
-				<UserAvatar className="!mx-2 rounded-full p-0" />
-				<Button>Premium</Button>
-			</div>
-		</nav>
+				<div className="flex items-center h-8 space-x-1">
+					<Tooltip>
+						<TooltipTrigger>
+							<Button variant="ghost" size="icon">
+								<LayoutDashboard />
+							</Button>
+						</TooltipTrigger>
+						<TooltipContent>
+							<p>Layouts</p>
+						</TooltipContent>
+					</Tooltip>
+					<Tooltip>
+						<TooltipTrigger>
+							<Button variant="ghost" size="icon">
+								<Settings />
+							</Button>
+						</TooltipTrigger>
+						<TooltipContent>
+							<p>Settings</p>
+						</TooltipContent>
+					</Tooltip>
+					<Tooltip>
+						<TooltipTrigger>
+							<Button variant="ghost">
+								<Flame /> 0
+							</Button>
+						</TooltipTrigger>
+						<TooltipContent>
+							<p>Solve today&apos;s daily challenge to refresh your streak</p>
+						</TooltipContent>
+					</Tooltip>
+					<UserAvatar className="!mx-2 rounded-full p-0" />
+					<Button>Premium</Button>
+				</div>
+			</nav>
+		</TooltipProvider>
 	);
 }
