@@ -12,13 +12,13 @@ export default function Workspace() {
 		<ResizablePanelGroup direction="horizontal" className="border rounded-lg">
 			<ResizablePanel defaultSize={50}>
 				<ResizablePanelGroup direction="vertical">
-					<ResizablePanel defaultSize={40}>
+					<ResizablePanel defaultSize={60}>
 						<div className="h-full">
 							<ProblemSection />
 						</div>
 					</ResizablePanel>
 					<ResizableHandle withHandle />
-					<ResizablePanel defaultSize={60}>
+					<ResizablePanel defaultSize={40}>
 						<div className="h-full">
 							<TestcaseSection />
 						</div>

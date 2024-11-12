@@ -6,10 +6,13 @@ import {
 	SelectValue,
 } from "@/components/ui/select";
 
-export default function LanguageSelector() {
+export default function LanguageSelector({ onSelect }) {
 	return (
 		<div>
-			<Select defaultValue="python">
+			<Select
+				defaultValue="python"
+				onValueChange={(newLang) => onSelect(newLang)}
+			>
 				<SelectTrigger className="w-fit h-6">
 					<SelectValue placeholder="Python" />
 				</SelectTrigger>
