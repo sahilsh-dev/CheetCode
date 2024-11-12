@@ -55,6 +55,8 @@ export default function CodeBody() {
 					minimap: { enabled: false },
 					quickSuggestions: false,
 					scrollBeyondLastLine: false,
+					contextmenu: false,
+					wordWrap: "on",
 				}}
 			/>
 		</>

@@ -23,8 +23,8 @@ export const CODE_TEMPLATES = {
 # obj.postTweet(userId,tweetId)
 # param_2 = obj.getNewsFeed(userId)
 # obj.follow(followerId,followeeId)
-# obj.unfollow(followerId,followeeId) 
-`,
+# obj.unfollow(followerId,followeeId)`,
+
   javascript: 
 `var Twitter = function() {
     
@@ -73,8 +73,8 @@ Twitter.prototype.unfollow = function(followerId, followeeId) {
  * obj.follow(followerId,followeeId)
  * obj.unfollow(followerId,followeeId)
  *
- */
-`,
+ */`,
+
   java: 
 `class Twitter {
 
@@ -106,8 +106,8 @@ Twitter.prototype.unfollow = function(followerId, followeeId) {
  * List<Integer> param_2 = obj.getNewsFeed(userId);
  * obj.follow(followerId,followeeId);
  * obj.unfollow(followerId,followeeId);
- */ 
-  `,
+ */`,
+
   cpp: 
 `class Twitter {
 
@@ -139,6 +139,5 @@ Twitter.prototype.unfollow = function(followerId, followeeId) {
  * List<Integer> param_2 = obj.getNewsFeed(userId);
  * obj.follow(followerId,followeeId);
  * obj.unfollow(followerId,followeeId);
- */
-`
+ */`
 }
