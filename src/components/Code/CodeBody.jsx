@@ -1,5 +1,5 @@
-import { useState } from "react";
-import Editor from "@monaco-editor/react";
+import { useState, useEffect } from "react";
+import Editor, { useMonaco } from "@monaco-editor/react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import {
@@ -15,6 +15,21 @@ import { CODE_TEMPLATES } from "@/constants";
 export default function CodeBody() {
 	const [language, setLanguage] = useState("python");
 	const [code, setCode] = useState(CODE_TEMPLATES.python);
+	const monaco = useMonaco();
+
+	useEffect(() => {
+		if (monaco) {
+			monaco.editor.defineTheme("custom-dark", {
+				base: "vs-dark",
+				inherit: true,
+				rules: [],
+				colors: {
+					"editor.background": "#0a0a0a",
+				},
+			});
+			monaco.editor.setTheme("custom-dark");
+		}
+	}, [monaco]);
 
 	const handleLanguageChange = (newLanguage) => {
 		setLanguage(newLanguage);
@@ -49,7 +64,7 @@ export default function CodeBody() {
 			<Editor
 				height="100%"
 				language={language}
-				theme="vs-dark"
+				theme="custom-dark"
 				value={code}
 				options={{
 					minimap: { enabled: false },
