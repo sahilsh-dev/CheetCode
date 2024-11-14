@@ -222,18 +222,13 @@ export default function MainNav() {
 										onClick={handleToggleTimer} 
 									>
 										{isRunning ? <CirclePause /> : <CirclePlay />}
-
 									</Button>
 								</TooltipTrigger>
-								
 								<TooltipContent>
 									<p>{isRunning ? "Pause" : "Start"}</p>
 								</TooltipContent>
 							</Tooltip>
-
-
-							
-							<div className="text-lg">{formatTime(time)}</div>
+							<div className="text-sm">{formatTime(time)}</div>
 							<Tooltip>
 								<TooltipTrigger>
 									<Button
@@ -250,8 +245,6 @@ export default function MainNav() {
 							</Tooltip>
 						</div>
 					)}
-
-
 					<Tooltip>
 						<TooltipTrigger>
 							<Button variant="secondary" size="icon">
