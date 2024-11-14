@@ -12,6 +12,9 @@ import {
 	Settings,
 	Flame,
 	AlarmClock,
+	CirclePlay,
+	CirclePause,
+	TimerReset,
 	StickyNote,
 } from "lucide-react";
 import {
@@ -23,8 +26,43 @@ import {
 import { toast } from "sonner";
 import logo from "@/assets/logo.png";
 import UserAvatar from "./UserAvatar";
+import { useState, useEffect } from "react";
 
 export default function MainNav() {
+	const [time, setTime] = useState(0);
+	const [isRunning, setIsRunning] = useState(false);
+	const [isExpanded, setIsExpanded] = useState(false);
+	const [intervalId, setIntervalId] = useState(null);
+	const formatTime = (timeInSeconds) => {
+		const hours = Math.floor(timeInSeconds / 3600); 
+		const minutes = Math.floor((timeInSeconds % 3600) / 60); 
+		const seconds = timeInSeconds % 60; 
+		return `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+	  };
+
+	const handleToggleTimer = () => {
+		if (isRunning) {
+			if (intervalId) clearInterval(intervalId);
+			setIsRunning(false);
+		} else {
+			const id = setInterval(() => {
+				setTime((prevTime) => prevTime + 1);
+			}, 1000);
+			setIntervalId(id);
+			setIsRunning(true);
+		}
+	};
+
+	const handleResetTimer = () => {
+		if (intervalId) clearInterval(intervalId);
+		setIsRunning(false);
+		setTime(0);
+	};
+
+	const handleExpandTimer = () => {
+		setIsExpanded((prev) => !prev);
+	};
+
 	const getCurrentDateTime = () => {
 		const now = new Date();
 		return now.toLocaleString("en-US", {
@@ -148,16 +186,65 @@ export default function MainNav() {
 							</TooltipContent>
 						</Tooltip>
 					</div>
-					<Tooltip>
-						<TooltipTrigger>
-							<Button variant="secondary" size="icon">
-								<AlarmClock />
-							</Button>
-						</TooltipTrigger>
-						<TooltipContent>
-							<p>Nope, doesnt work</p>
-						</TooltipContent>
-					</Tooltip>
+					{!isExpanded &&
+						(<Tooltip>
+							<TooltipTrigger>
+								<Button variant="secondary" size="icon" onClick={handleExpandTimer}>
+									<AlarmClock />
+								</Button>
+							</TooltipTrigger>
+							<TooltipContent>
+								<p>Show Timer</p>
+							</TooltipContent>
+						</Tooltip>)}
+					{isExpanded && (
+						<div className="flex items-center space-x-2">
+							<Tooltip>
+								<TooltipTrigger>
+									<Button
+										variant="secondary"
+										size="icon"
+										onClick={handleExpandTimer} 
+									>
+										<ChevronLeft />
+									</Button>
+								</TooltipTrigger>
+								<TooltipContent>
+									<p>Hide Timer</p>
+								</TooltipContent>
+							</Tooltip>
+
+							<Tooltip>
+								<TooltipTrigger>
+									<Button
+										variant="secondary"
+										size="icon"
+										onClick={handleToggleTimer} 
+									>
+										{isRunning ? <CirclePause /> : <CirclePlay />}
+									</Button>
+								</TooltipTrigger>
+								<TooltipContent>
+									<p>{isRunning ? "Pause" : "Start"}</p>
+								</TooltipContent>
+							</Tooltip>
+							<div className="text-sm">{formatTime(time)}</div>
+							<Tooltip>
+								<TooltipTrigger>
+									<Button
+										variant="secondary"
+										size="icon"
+										onClick={handleResetTimer} 
+									>
+										<TimerReset />
+									</Button>
+								</TooltipTrigger>
+								<TooltipContent>
+									<p>Reset Timer</p>
+								</TooltipContent>
+							</Tooltip>
+						</div>
+					)}
 					<Tooltip>
 						<TooltipTrigger>
 							<Button variant="secondary" size="icon">
