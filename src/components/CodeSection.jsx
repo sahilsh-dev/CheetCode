@@ -1,6 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import CodeBody from "./Code/CodeBody";
+import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
+import CodeBody from "./Code/CodeBody";
 
 export default function CodeSection({ isNoteTabVisible }) {
   return (
@@ -23,7 +24,7 @@ export default function CodeSection({ isNoteTabVisible }) {
       </TabsContent>
       <TabsContent value="note" className="h-full">
         <div className="h-full px-4 py-3">
-          <p>Type here...</p>
+          <Textarea className="h-full border-0" placeholder="Type here..." />
         </div>
       </TabsContent>
     </Tabs>
