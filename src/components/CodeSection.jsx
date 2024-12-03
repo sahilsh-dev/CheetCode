@@ -1,9 +1,12 @@
+import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 import CodeBody from "./Code/CodeBody";
 
 export default function CodeSection({ isNoteTabVisible }) {
+  const [noteText, setNoteText] = useState("");
+
   return (
     <Tabs defaultValue="code" className="h-[calc(100%-36px)] ">
       <TabsList className="flex justify-start w-full h-9">
@@ -24,7 +27,12 @@ export default function CodeSection({ isNoteTabVisible }) {
       </TabsContent>
       <TabsContent value="note" className="h-full">
         <div className="h-full px-4 py-3">
-          <Textarea className="h-full border-0" placeholder="Type here..." />
+          <Textarea
+            className="h-full border-0"
+            placeholder="Type here..."
+            value={noteText}
+            onChange={(e) => setNoteText(e.target.value)}
+          />
         </div>
       </TabsContent>
     </Tabs>
