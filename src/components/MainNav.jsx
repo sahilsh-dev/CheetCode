@@ -26,6 +26,7 @@ import { toast } from "sonner";
 import logo from "@/assets/logo.png";
 import UserAvatar from "./Navbar/UserAvatar";
 import ProblemList from "./Navbar/ProblemList";
+import UnsupportedDialog from "./Navbar/UnsupportedDialog";
 import { useState } from "react";
 
 export default function MainNav({ setNoteTabVisible }) {
@@ -98,26 +99,30 @@ export default function MainNav({ setNoteTabVisible }) {
               <p>Expand Panel</p>
             </TooltipContent>
           </Tooltip>
-          <Tooltip>
-            <TooltipTrigger>
-              <Button variant="ghost" size="icon">
-                <ChevronLeft />
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Prev Question</p>
-            </TooltipContent>
-          </Tooltip>
-          <Tooltip>
-            <TooltipTrigger>
-              <Button variant="ghost" size="icon">
-                <ChevronRight />
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Next Question</p>
-            </TooltipContent>
-          </Tooltip>
+          <UnsupportedDialog>
+            <Tooltip>
+              <TooltipTrigger>
+                <Button variant="ghost" size="icon">
+                  <ChevronLeft />
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Prev Question</p>
+              </TooltipContent>
+            </Tooltip>
+          </UnsupportedDialog>
+          <UnsupportedDialog>
+            <Tooltip>
+              <TooltipTrigger>
+                <Button variant="ghost" size="icon">
+                  <ChevronRight />
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Next Question</p>
+              </TooltipContent>
+            </Tooltip>
+          </UnsupportedDialog>
           <Tooltip>
             <TooltipTrigger>
               <Button variant="ghost" size="icon">
