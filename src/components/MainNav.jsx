@@ -1,7 +1,6 @@
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import {
-  List,
   ChevronLeft,
   ChevronRight,
   Shuffle,
@@ -25,7 +24,8 @@ import {
 } from "@/components/ui/tooltip";
 import { toast } from "sonner";
 import logo from "@/assets/logo.png";
-import UserAvatar from "./UserAvatar";
+import UserAvatar from "./Navbar/UserAvatar";
+import ProblemList from "./Navbar/ProblemList";
 import { useState } from "react";
 
 export default function MainNav({ setNoteTabVisible }) {
@@ -92,9 +92,7 @@ export default function MainNav({ setNoteTabVisible }) {
           <Separator orientation="vertical" className="h-5" />
           <Tooltip>
             <TooltipTrigger>
-              <Button variant="ghost">
-                <List /> Problem List
-              </Button>
+              <ProblemList />
             </TooltipTrigger>
             <TooltipContent>
               <p>Expand Panel</p>
