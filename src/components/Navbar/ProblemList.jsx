@@ -2,14 +2,13 @@ import { Button } from "@/components/ui/button";
 import { List } from "lucide-react";
 import {
   Sheet,
-  SheetClose,
   SheetContent,
   SheetDescription,
-  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import ProblemsTable from "./ProblemsTable";
 
 export default function ProblemList() {
   return (
@@ -19,22 +18,14 @@ export default function ProblemList() {
           <List /> Problem List
         </Button>
       </SheetTrigger>
-      <SheetContent side="left">
+      <SheetContent side="left" className="w-[400px] sm:w-[540px]">
         <SheetHeader>
           <SheetTitle>Problem List</SheetTitle>
           <SheetDescription>
             Select a problem to view its details
           </SheetDescription>
         </SheetHeader>
-        <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">Problem 1</div>
-          <div className="grid grid-cols-4 items-center gap-4">Problem 2</div>
-        </div>
-        <SheetFooter>
-          <SheetClose asChild>
-            <Button type="submit">Close</Button>
-          </SheetClose>
-        </SheetFooter>
+        <ProblemsTable />
       </SheetContent>
     </Sheet>
   );
