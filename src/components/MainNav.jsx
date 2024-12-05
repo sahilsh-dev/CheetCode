@@ -6,7 +6,6 @@ import {
   Shuffle,
   Play,
   CloudUpload,
-  LayoutDashboard,
   Settings,
   Flame,
   AlarmClock,
@@ -27,6 +26,7 @@ import UserAvatar from "./Navbar/UserAvatar";
 import ProblemList from "./Navbar/ProblemList";
 import UnsupportedDialog from "./Navbar/UnsupportedDialog";
 import DebuggerButton from "./Navbar/DebuggerButton";
+import LayoutsButton from "./Navbar/LayoutsButton";
 import { useState } from "react";
 
 export default function MainNav({ setNoteTabVisible }) {
@@ -263,16 +263,7 @@ export default function MainNav({ setNoteTabVisible }) {
           </Tooltip>
         </div>
         <div className="flex items-center h-8 space-x-1">
-          <Tooltip>
-            <TooltipTrigger>
-              <Button variant="ghost" size="icon">
-                <LayoutDashboard />
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Layouts</p>
-            </TooltipContent>
-          </Tooltip>
+          <LayoutsButton />
           <Tooltip>
             <TooltipTrigger>
               <Button variant="ghost" size="icon">
