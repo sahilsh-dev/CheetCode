@@ -4,7 +4,6 @@ import {
   ChevronLeft,
   ChevronRight,
   Shuffle,
-  BugPlay,
   Play,
   CloudUpload,
   LayoutDashboard,
@@ -27,6 +26,7 @@ import logo from "@/assets/logo.png";
 import UserAvatar from "./Navbar/UserAvatar";
 import ProblemList from "./Navbar/ProblemList";
 import UnsupportedDialog from "./Navbar/UnsupportedDialog";
+import DebuggerButton from "./Navbar/DebuggerButton";
 import { useState } from "react";
 
 export default function MainNav({ setNoteTabVisible }) {
@@ -123,29 +123,22 @@ export default function MainNav({ setNoteTabVisible }) {
               </TooltipContent>
             </Tooltip>
           </UnsupportedDialog>
-          <Tooltip>
-            <TooltipTrigger>
-              <Button variant="ghost" size="icon">
-                <Shuffle />
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Pick one</p>
-            </TooltipContent>
-          </Tooltip>
-        </div>
-        <div className="flex items-center h-8 space-x-2">
-          <div className="flex items-center space-x-1">
+          <UnsupportedDialog>
             <Tooltip>
               <TooltipTrigger>
-                <Button size="icon" variant="secondary">
-                  <BugPlay />
+                <Button variant="ghost" size="icon">
+                  <Shuffle />
                 </Button>
               </TooltipTrigger>
               <TooltipContent>
-                <p>Upgrade to premium to use debugger</p>
+                <p>Pick one</p>
               </TooltipContent>
             </Tooltip>
+          </UnsupportedDialog>
+        </div>
+        <div className="flex items-center h-8 space-x-2">
+          <div className="flex items-center space-x-1">
+            <DebuggerButton />
             <Tooltip>
               <TooltipTrigger>
                 <Button

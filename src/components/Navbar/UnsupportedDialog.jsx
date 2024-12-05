@@ -23,9 +23,7 @@ export default function UnsupportedDialog({ children }) {
         </DialogHeader>
         <DialogFooter>
           <DialogClose asChild>
-            <Button type="button" variant="secondary">
-              Close
-            </Button>
+            <Button type="button">Close</Button>
           </DialogClose>
         </DialogFooter>
       </DialogContent>
