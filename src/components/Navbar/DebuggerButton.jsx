@@ -23,7 +23,7 @@ export default function DebuggerButton() {
       <DialogTrigger>
         <Tooltip>
           <TooltipTrigger>
-            <Button size="icon" variant="secondary">
+            <Button size="icon" variant="secondary" className="rounded-r-none">
               <BugPlay />
             </Button>
           </TooltipTrigger>

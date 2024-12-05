@@ -137,12 +137,13 @@ export default function MainNav({ setNoteTabVisible }) {
           </UnsupportedDialog>
         </div>
         <div className="flex items-center h-8 space-x-2">
-          <div className="flex items-center space-x-1">
+          <div className="flex items-center space-x-0.5">
             <DebuggerButton />
             <Tooltip>
               <TooltipTrigger>
                 <Button
                   variant="secondary"
+                  className="rounded-none"
                   onClick={() => {
                     toast.success("Code ran successfully", {
                       description: getCurrentDateTime(),
@@ -163,7 +164,7 @@ export default function MainNav({ setNoteTabVisible }) {
               <TooltipTrigger>
                 <Button
                   variant="secondary"
-                  className="text-[var(--success-green)]"
+                  className="text-[var(--success-green)] rounded-l-none"
                   onClick={() => {
                     toast.promise(handleSubmit, {
                       loading: "Pending...",
